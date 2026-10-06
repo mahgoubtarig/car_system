@@ -1,0 +1,1052 @@
+/* ============================================================
+   تنسيقات وحدة العقود (Rentals)
+   ============================================================ */
+
+/* ============================================================
+   Page Header
+   ============================================================ */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 4px;
+}
+
+.page-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.page-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   Rental Detail Header
+   ============================================================ */
+.rental-detail-header {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.rental-icon-large {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.rental-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.rental-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.rental-title-row h1 {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin: 0;
+    font-weight: 700;
+}
+
+.rental-subtitle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+}
+
+.rental-subtitle strong {
+    color: var(--text-primary);
+}
+
+.rental-quick-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    padding: 14px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+/* ============================================================
+   Quick Info Item
+   ============================================================ */
+.quick-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.quick-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.quick-info-item strong {
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+/* ============================================================
+   Info Box
+   ============================================================ */
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: var(--primary-light);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--radius-md);
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.info-box svg {
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   Duration Info
+   ============================================================ */
+.duration-info {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: var(--primary-light);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--primary-color);
+}
+
+.duration-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.duration-badge strong {
+    font-size: 1.5rem;
+}
+
+/* ============================================================
+   Checkbox Group
+   ============================================================ */
+.checkbox-group {
+    margin-bottom: 20px;
+}
+
+.checkbox-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-custom {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-input);
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-custom {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* ============================================================
+   Payment Summary & Total Summary
+   ============================================================ */
+.payment-summary,
+.total-summary {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    border: 2px solid var(--border-color);
+}
+
+.payment-summary .summary-row,
+.total-summary .summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.payment-summary .summary-row:last-child,
+.total-summary .summary-row:last-child {
+    border-bottom: none;
+}
+
+.payment-summary .summary-row span,
+.total-summary .summary-row span {
+    color: var(--text-secondary);
+}
+
+.payment-summary .summary-row strong,
+.total-summary .summary-row strong {
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.payment-summary .summary-row-total,
+.total-summary .summary-row-total {
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 2px solid var(--primary-color);
+    border-bottom: none;
+}
+
+.payment-summary .summary-row-total span,
+.total-summary .summary-row-total span {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.payment-summary .summary-row-total strong,
+.total-summary .summary-row-total strong {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+/* ============================================================
+   Next Payment Section
+   ============================================================ */
+#nextPaymentSection {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed var(--border-color);
+}
+
+#nextPaymentSection .info-box {
+    background: var(--warning-light);
+    border-color: var(--warning-color);
+    color: var(--warning-color);
+}
+
+/* ============================================================
+   Inspections List
+   ============================================================ */
+.inspections-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inspection-item {
+    padding: 14px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    border-inline-start: 4px solid var(--primary-color);
+}
+
+.inspection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.inspection-header strong {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.inspection-header span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.inspection-details {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* ============================================================
+   Notifications (Bell + Dropdown)
+   ============================================================ */
+.notification-badge {
+    position: absolute;
+    top: 4px;
+    inset-inline-end: 4px;
+    background: var(--danger-color);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.notifications-menu {
+    width: 380px;
+    max-width: 90vw;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.notification-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.notification-item:hover {
+    background: var(--bg-hover);
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+}
+
+.notification-icon.payment_due { background: var(--warning-light); color: var(--warning-color); }
+.notification-icon.payment_overdue { background: var(--danger-light); color: var(--danger-color); }
+.notification-icon.rental_ending { background: var(--primary-light); color: var(--primary-color); }
+.notification-icon.rental_overdue { background: var(--danger-light); color: var(--danger-color); }
+.notification-icon.doc_expiry { background: var(--warning-light); color: var(--warning-color); }
+.notification-icon.service_due { background: var(--primary-light); color: var(--primary-color); }
+
+.notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.notification-content strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.notification-content small {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.notification-content .notification-date {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+/* ============================================================
+   Notifications Full Page
+   ============================================================ */
+.notifications-list-full {
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-row {
+    display: flex;
+    gap: 16px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.notification-row:hover {
+    background: var(--bg-hover);
+}
+
+.notification-row:last-child {
+    border-bottom: none;
+}
+
+.notification-row-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.4rem;
+    background: var(--bg-tertiary);
+}
+
+.notification-row.notification-payment_due .notification-row-icon { background: var(--warning-light); }
+.notification-row.notification-payment_overdue .notification-row-icon { background: var(--danger-light); }
+.notification-row.notification-rental_ending .notification-row-icon { background: var(--primary-light); }
+.notification-row.notification-rental_overdue .notification-row-icon { background: var(--danger-light); }
+.notification-row.notification-doc_expiry .notification-row-icon { background: var(--warning-light); }
+.notification-row.notification-service_due .notification-row-icon { background: var(--primary-light); }
+
+.notification-row-content {
+    flex: 1;
+}
+
+.notification-row-content strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.notification-row-content p {
+    margin: 0 0 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.notification-row-content small {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* ============================================================
+   Table Extras
+   ============================================================ */
+.table td small {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin-top: 2px;
+}
+
+.table-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.table-link:hover {
+    text-decoration: underline;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* ============================================================
+   Info Table
+   ============================================================ */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table th {
+    text-align: start;
+    padding: 10px 0;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    width: 45%;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-table td {
+    padding: 10px 0;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-table tr:last-child th,
+.info-table tr:last-child td {
+    border-bottom: none;
+}
+
+.info-table .total-row th,
+.info-table .total-row td {
+    background: var(--primary-light);
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 12px 10px;
+}
+
+/* ============================================================
+   Modal
+   ============================================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+}
+
+.modal {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 480px;
+    box-shadow: var(--shadow-xl);
+    animation: modalSlideUp 0.3s ease-out;
+    overflow: hidden;
+}
+
+.modal.modal-sm {
+    max-width: 400px;
+}
+
+@keyframes modalSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.modal-header h3.text-danger {
+    color: var(--danger-color);
+}
+
+.modal-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.modal-body {
+    padding: 22px;
+}
+
+.modal-body p {
+    margin: 0 0 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.modal-footer {
+    padding: 16px 22px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn-success {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-success:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-warning {
+    background: var(--warning-color);
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #d97706;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-icon-danger {
+    color: var(--danger-color) !important;
+}
+
+.btn-icon-danger:hover {
+    background: var(--danger-light) !important;
+    color: var(--danger-color) !important;
+}
+
+/* ============================================================
+   Filters
+   ============================================================ */
+.filters-card {
+    margin-bottom: 20px;
+}
+
+.filters-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.filter-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.filter-group input,
+.filter-group select {
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* ============================================================
+   Stats Compact
+   ============================================================ */
+.stats-grid-compact {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+   Text Utilities
+   ============================================================ */
+.text-success { color: var(--success-color) !important; }
+.text-danger  { color: var(--danger-color) !important; }
+.text-warning { color: var(--warning-color) !important; }
+.text-muted   { color: var(--text-muted) !important; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 900px) {
+    .rental-detail-header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .rental-icon-large {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        margin: 0 auto;
+    }
+    
+    .rental-title-row,
+    .rental-subtitle {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .rental-title-row h1 {
+        font-size: 1.3rem;
+    }
+    
+    .car-actions {
+        flex-direction: column;
+    }
+    
+    .car-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .notifications-menu {
+        width: 300px;
+    }
+    /* ============================================================
+   Tabs
+   ============================================================ */
+.tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 4px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition);
+    white-space: nowrap;
+    position: relative;
+}
+
+.tab:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.tab.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.tab-badge {
+    background: var(--danger-color);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.tab.active .tab-badge {
+    background: white;
+    color: var(--primary-color);
+}
+
+/* ============================================================
+   Row Danger
+   ============================================================ */
+.row-danger {
+    background: var(--danger-light) !important;
+}
+
+.row-danger:hover {
+    background: var(--danger-light) !important;
+}
+
+/* ============================================================
+   Button Small
+   ============================================================ */
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+}
+
+/* ============================================================
+   Payment Modal Info Box
+   ============================================================ */
+.payment-info-box {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.payment-info-box .info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.payment-info-box .info-row:last-child {
+    border-bottom: none;
+}
+
+.payment-info-box .info-row span {
+    color: var(--text-secondary);
+}
+
+.payment-info-box .info-row strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* ============================================================
+   Radio Group
+   ============================================================ */
+.radio-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--bg-input);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.radio-option:hover {
+    border-color: var(--primary-color);
+    background: var(--bg-hover);
+}
+
+.radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-custom {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    background: var(--bg-card);
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-custom {
+    border-color: var(--primary-color);
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-custom::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
+.radio-option input[type="radio"]:checked ~ span:last-child {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.radio-option:has(input[type="radio"]:checked) {
+    border-color: var(--primary-color);
+    background: var(--primary-light);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 640px) {
+    .tabs {
+        padding: 4px;
+    }
+    
+    .tab {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+    
+    .radio-group {
+        grid-template-columns: 1fr;
+    }
+}
+/* ============================================================
+   Row Active (تمييز الصف الحالي)
+   ============================================================ */
+.row-active {
+    background: var(--primary-light) !important;
+    font-weight: 600;
+}
+
+.row-active:hover {
+    background: var(--primary-light) !important;
+}
+
+/* ============================================================
+   Delete Customer Name (في Modal)
+   ============================================================ */
+.delete-customer-name {
+    background: var(--danger-light);
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    color: var(--danger-color);
+    font-size: 1.05rem;
+    border: 1px solid var(--danger-color);
+    margin: 12px 0;
+}
+}

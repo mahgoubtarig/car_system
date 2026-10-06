@@ -1,0 +1,125 @@
+/* ============================================================
+   تنسيقات التقارير
+   ============================================================ */
+
+/* Report Links */
+.report-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.report-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.report-link:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.report-link-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.report-link strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.report-link span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Total Row */
+tfoot .total-row th,
+tfoot .total-row td {
+    background: var(--bg-tertiary);
+    font-weight: 700;
+    border-top: 2px solid var(--primary-color);
+    font-size: 1rem;
+}
+
+/* Print Styles */
+@media print {
+    .sidebar,
+    .topbar,
+    .page-actions,
+    .filters-card,
+    .footer,
+    .theme-toggle,
+    .notifications-btn,
+    .user-menu {
+        display: none !important;
+    }
+    
+    .main-wrapper {
+        margin: 0 !important;
+    }
+    
+    .main-content {
+        padding: 0 !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid;
+    }
+    
+    .stats-grid {
+        display: flex !important;
+        flex-wrap: wrap;
+    }
+    
+    .stat-card {
+        flex: 1 1 45%;
+        min-width: 200px;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .report-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .report-link {
+        padding: 16px;
+    }
+    
+    .report-link-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+}
